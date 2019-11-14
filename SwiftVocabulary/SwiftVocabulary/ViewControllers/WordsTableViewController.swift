@@ -10,9 +10,9 @@ import UIKit
 
 class WordsTableViewController: UITableViewController {
     
-    var vocabWords: [VocabularyWord] = [VocabularyWord(word: "Variable", definition: "A named value used to store information. Variables can be                                                                                 changed after been created"),
-                                        VocabularyWord(word: "Constant", definition: "Another named value used to store information but cannot be changed once its been                     set"),
-                                        VocabularyWord(word: "Function", definition: "Functions are self-contained chunks of code that perform a specific task. You give                    a function a name that identifies what it does, and this name is used to “call” the function to perform its                   task when needed.")]
+    var vocabWords: [VocabularyWord] = [VocabularyWord(word: "Variable", definition: "A named value used to store information. Variables can be changed after been created"),
+                                        VocabularyWord(word: "Constant", definition: "Another named value used to store information but cannot be changed once its been set"),
+                                        VocabularyWord(word: "Function", definition: "Functions are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to “call” the function to perform its task when needed.")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,12 @@ class WordsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return vocabWords.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return vocabWords.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +43,6 @@ class WordsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDefinitionSegue" {
             guard let detailVC = segue.destination as? DefinitionViewController, let indexPath = tableView.indexPathForSelectedRow else {
