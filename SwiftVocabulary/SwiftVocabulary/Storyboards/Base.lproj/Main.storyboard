@@ -10,7 +10,7 @@
         <!--Swift Vocabulary-->
         <scene sceneID="u1Z-oe-OO7">
             <objects>
-                <tableViewController id="v2g-Ju-SWS" sceneMemberID="viewController">
+                <tableViewController id="v2g-Ju-SWS" customClass="WordsTableViewController" customModule="SwiftVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zjf-0a-quH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ubb-09-9oS" kind="show" identifier="DefinitionSegue" id="XqA-eU-PtK"/>
+                                    <segue destination="ubb-09-9oS" kind="show" identifier="ShowDefinitionSegue" id="XqA-eU-PtK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="261" y="173"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="yju-p6-TcW">
             <objects>
-                <viewController id="ubb-09-9oS" sceneMemberID="viewController">
+                <viewController id="ubb-09-9oS" customClass="DefinitionViewController" customModule="SwiftVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ywZ-f8-g7g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,10 @@
                         <viewLayoutGuide key="safeArea" id="0ME-nP-8RK"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Jp-5L-H4b"/>
+                    <connections>
+                        <outlet property="definitionTextView" destination="1dX-GA-SSa" id="XUJ-rL-OqV"/>
+                        <outlet property="vocabLabel" destination="3jl-Eh-G5S" id="ecE-jG-nfM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXi-Od-NBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
